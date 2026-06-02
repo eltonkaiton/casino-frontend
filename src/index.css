@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  background: #111827;
+  color: white;
+  padding: 20px;
+}
+
+.logo {
+  margin-bottom: 30px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  padding: 15px 0;
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+}
+
+.sidebar li:hover {
+  color: gold;
+}
+
+.main-content {
+  flex: 1;
+  background: #f3f4f6;
+}
+
+.navbar {
+  background: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.dropdown-btn {
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  padding-left: 20px;
+}
+
+.dropdown-menu li {
+  padding: 10px 0;
+  font-size: 14px;
+}
+
+.dropdown-menu li:hover {
+  color: gold;
+}
+
+.logout-btn {
+  margin-top: 30px;
+  color: #ff6b6b;
+}
+
+.logout-btn:hover {
+  color: red;
+}
+
+.sidebar-link {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.sidebar-link:hover {
+  color: gold;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.dropdown-btn {
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  padding-left: 20px;
+}
+
+.dropdown-menu li {
+  padding: 10px 0;
+  font-size: 14px;
+  list-style: none;
+}
+
+.dropdown-menu li:hover {
+  color: gold;
+}
+
+.logout-btn {
+  margin-top: 30px;
+  color: #ff6b6b;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  color: red;
+}
