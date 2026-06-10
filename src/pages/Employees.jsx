@@ -20,7 +20,7 @@ function Employees() {
   const fetchEmployees = async () => {
     try {
       setLoading(true);
-      const res = await axios.get("http://localhost:5000/api/employees");
+      const res = await axios.get("https://c-server-fprl.onrender.com/api/employees");
       
       console.log("API Response:", res.data);
       
@@ -61,7 +61,7 @@ function Employees() {
     if (!confirmDelete) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/employees/${id}`);
+      await axios.delete(`https://c-server-fprl.onrender.com/api/employees/${id}`);
       alert("Employee deleted successfully");
       fetchEmployees();
     } catch (error) {

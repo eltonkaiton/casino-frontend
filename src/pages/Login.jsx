@@ -26,7 +26,7 @@ function Login() {
       setLoading(true);
 
       const res = await axios.post(
-        "http://localhost:5000/api/employees/login",
+        "https://c-server-fprl.onrender.com/api/employees/login",
         formData
       );
 

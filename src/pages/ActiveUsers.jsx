@@ -9,7 +9,7 @@ function ActiveUsers() {
   const fetchUsers = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/users"
+        "https://c-server-fprl.onrender.com/api/users"
       );
 
       const activeUsers = res.data.filter(
@@ -34,7 +34,7 @@ function ActiveUsers() {
   const suspendUser = async (id) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/users/${id}/status`,
+        `https://c-server-fprl.onrender.com/api/users/${id}/status`,
         { status: "Suspended" }
       );
 
@@ -51,7 +51,7 @@ function ActiveUsers() {
   const deleteUser = async (id) => {
     try {
       await axios.delete(
-        `http://localhost:5000/api/users/${id}`
+        `https://c-server-fprl.onrender.com/api/users/${id}`
       );
 
       fetchUsers();

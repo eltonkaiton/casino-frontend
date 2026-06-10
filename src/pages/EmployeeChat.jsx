@@ -24,7 +24,7 @@ import {
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 
-const API_BASE_URL = "http://localhost:5000/api";
+const API_BASE_URL = "https://c-server-fprl.onrender.com/api";
 
 const EmployeeChat = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true);

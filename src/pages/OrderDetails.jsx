@@ -8,7 +8,7 @@ function OrderDetails() {
   const [order, setOrder] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const API_BASE_URL = "http://localhost:5000/api";
+  const API_BASE_URL = "https://c-server-fprl.onrender.com/api";
 
   const fetchOrder = async () => {
     try {

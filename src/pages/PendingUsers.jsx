@@ -9,7 +9,7 @@ function PendingUsers() {
   const fetchUsers = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/users"
+        "https://c-server-fprl.onrender.com/api/users"
       );
 
       const pendingUsers = res.data.filter(
@@ -32,7 +32,7 @@ function PendingUsers() {
   const updateStatus = async (id, status) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/users/${id}/status`,
+        `https://c-server-fprl.onrender.com/api/users/${id}/status`,
         { status }
       );
 

@@ -44,7 +44,7 @@ function Dashboard() {
   const [loading, setLoading] = useState(true);
   const [selectedPeriod, setSelectedPeriod] = useState("week");
 
-  const API_BASE_URL = "http://localhost:5000/api";
+  const API_BASE_URL = "https://c-server-fprl.onrender.com/api";
 
   const fetchDashboardData = async () => {
     try {
