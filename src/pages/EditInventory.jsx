@@ -17,7 +17,7 @@ function EditInventory() {
     description: ""
   });
 
-  const API_BASE_URL = "https://c-server-fprl.onrender.com/api";
+  const API_BASE_URL = "http://localhost:5000/api";
 
   const fetchItem = async () => {
     try {

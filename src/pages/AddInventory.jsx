@@ -15,7 +15,7 @@ function AddInventory() {
     description: ""
   });
 
-  const API_BASE_URL = "https://c-server-fprl.onrender.com/api";
+  const API_BASE_URL = "http://localhost:5000/api";
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });

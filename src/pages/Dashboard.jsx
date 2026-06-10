@@ -44,7 +44,7 @@ function Dashboard() {
   const [loading, setLoading] = useState(true);
   const [selectedPeriod, setSelectedPeriod] = useState("week");
 
-  const API_BASE_URL = "https://c-server-fprl.onrender.com/api";
+  const API_BASE_URL = "http://localhost:5000/api";
 
   const fetchDashboardData = async () => {
     try {
@@ -71,7 +71,7 @@ function Dashboard() {
       
       const totalUsers = users.length;
       const totalBookings = bookings.length;
-      const totalRevenue = bookings.reduce((sum, booking) => sum + (booking.price || 0), 0);
+      const totalRevenue = bookings.reduce((sum, booking) => sum + (booking.totalAmount || booking.price || 0), 0);
       const totalFeedback = feedback.length;
       const pendingBookings = bookings.filter(b => b.status === "Pending").length;
       const approvedBookings = bookings.filter(b => b.status === "Approved").length;
@@ -89,7 +89,7 @@ function Dashboard() {
       const lastMonthRevenue = bookings.filter(booking => {
         const bookingDate = new Date(booking.createdAt);
         return bookingDate >= lastMonthDate && bookingDate < currentDate;
-      }).reduce((sum, booking) => sum + (booking.price || 0), 0);
+      }).reduce((sum, booking) => sum + (booking.totalAmount || booking.price || 0), 0);
       
       const bookingGrowth = lastMonthBookings === 0 ? 0 : ((totalBookings - lastMonthBookings) / lastMonthBookings) * 100;
       const revenueGrowth = lastMonthRevenue === 0 ? 0 : ((totalRevenue - lastMonthRevenue) / lastMonthRevenue) * 100;
@@ -100,7 +100,7 @@ function Dashboard() {
         action: `made a booking for ${booking.gameTitle}`,
         time: getTimeAgo(booking.createdAt),
         type: "booking",
-        amount: booking.price,
+        amount: booking.totalAmount || booking.price,
         status: booking.status
       }));
       
@@ -171,7 +171,7 @@ function Dashboard() {
       const diffDays = Math.floor((now - bookingDate) / (1000 * 60 * 60 * 24));
       
       if (diffDays < days) {
-        dailyRevenue[dailyRevenue.length - 1 - diffDays] += booking.price || 0;
+        dailyRevenue[dailyRevenue.length - 1 - diffDays] += booking.totalAmount || booking.price || 0;
         dailyBookings[dailyBookings.length - 1 - diffDays] += 1;
       }
     });
@@ -680,14 +680,6 @@ function Dashboard() {
             <div style={menuItemStyle("/payments")}>
               <FaMoneyBillWave style={iconStyle} />
               {sidebarOpen && <span style={{ fontSize: "14px", fontWeight: "500" }}>Payments</span>}
-            </div>
-          </Link>
-
-          {/* Reports */}
-          <Link to="/reports" style={{ textDecoration: "none" }}>
-            <div style={menuItemStyle("/reports")}>
-              <FaClipboardList style={iconStyle} />
-              {sidebarOpen && <span style={{ fontSize: "14px", fontWeight: "500" }}>Reports</span>}
             </div>
           </Link>
         </div>

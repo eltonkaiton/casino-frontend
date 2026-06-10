@@ -11,7 +11,7 @@ function SuspendedUsers() {
   const fetchUsers = async () => {
     try {
       const res = await axios.get(
-        "https://c-server-fprl.onrender.com/api/users"
+        "http://localhost:5000/api/users"
       );
 
       const suspendedUsers = res.data.filter(
@@ -53,7 +53,7 @@ function SuspendedUsers() {
   const updateStatus = async (id, status) => {
     try {
       await axios.put(
-        `https://c-server-fprl.onrender.com/api/users/${id}/status`,
+        `http://localhost:5000/api/users/${id}/status`,
         { status }
       );
 

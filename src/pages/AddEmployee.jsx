@@ -80,7 +80,7 @@ function AddEmployee() {
       setLoading(true);
 
       const res = await axios.post(
-        "https://c-server-fprl.onrender.com/api/employees",
+        "http://localhost:5000/api/employees",
         formData
       );
 

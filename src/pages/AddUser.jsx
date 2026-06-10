@@ -63,7 +63,7 @@ function AddUser() {
       setLoading(true);
 
       const response = await axios.post(
-        "https://c-server-fprl.onrender.com/api/users",
+        "http://localhost:5000/api/users",
         formData
       );
 

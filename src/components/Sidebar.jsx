@@ -480,34 +480,6 @@ function Sidebar() {
             )}
           </div>
         </Link>
-
-        {/* Reports */}
-        <Link to="/reports" style={{ textDecoration: "none" }}>
-          <div
-            style={menuItemStyle("/reports")}
-            onMouseEnter={() => setHoveredItem("reports")}
-            onMouseLeave={() => setHoveredItem(null)}
-          >
-            <FaClipboardList style={iconStyle("/reports")} />
-            {isOpen && <span style={{ fontSize: "14px", fontWeight: "500" }}>Reports</span>}
-            {hoveredItem === "reports" && !isOpen && (
-              <div
-                style={{
-                  position: "absolute",
-                  left: "70px",
-                  backgroundColor: "#1e293b",
-                  padding: "6px 12px",
-                  borderRadius: "6px",
-                  fontSize: "12px",
-                  whiteSpace: "nowrap",
-                  zIndex: 1001,
-                }}
-              >
-                Reports
-              </div>
-            )}
-          </div>
-        </Link>
       </div>
 
       {/* Bottom Section */}
@@ -555,7 +527,7 @@ function Sidebar() {
         
         .sidebar::-webkit-scrollbar-thumb {
           background: #FFD700;
-          border-radius: 4px;
+          borderRadius: "4px";
         }
         
         .sidebar::-webkit-scrollbar-thumb:hover {

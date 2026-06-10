@@ -14,7 +14,7 @@ function InventoryItems() {
     outOfStock: 0
   });
 
-  const API_BASE_URL = "https://c-server-fprl.onrender.com/api";
+  const API_BASE_URL = "http://localhost:5000/api";
 
   const fetchItems = async () => {
     try {

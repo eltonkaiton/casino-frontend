@@ -28,7 +28,7 @@ function EditEmployee() {
   const fetchEmployee = async () => {
     try {
       const res = await axios.get(
-        `https://c-server-fprl.onrender.com/api/employees/${id}`
+        `http://localhost:5000/api/employees/${id}`
       );
 
       setFormData(res.data);
@@ -60,7 +60,7 @@ function EditEmployee() {
 
     try {
       await axios.put(
-        `https://c-server-fprl.onrender.com/api/employees/${id}`,
+        `http://localhost:5000/api/employees/${id}`,
         formData
       );
 

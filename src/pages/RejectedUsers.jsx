@@ -11,7 +11,7 @@ function RejectedUsers() {
   const fetchUsers = async () => {
     try {
       const res = await axios.get(
-        "https://c-server-fprl.onrender.com/api/users"
+        "http://localhost:5000/api/users"
       );
 
       const rejectedUsers = res.data.filter(
@@ -53,7 +53,7 @@ function RejectedUsers() {
   const updateStatus = async (id, status) => {
     try {
       await axios.put(
-        `https://c-server-fprl.onrender.com/api/users/${id}/status`,
+        `http://localhost:5000/api/users/${id}/status`,
         { status }
       );
 
@@ -70,7 +70,7 @@ function RejectedUsers() {
   const deleteUser = async (id) => {
     try {
       await axios.delete(
-        `https://c-server-fprl.onrender.com/api/users/${id}`
+        `http://localhost:5000/api/users/${id}`
       );
 
       fetchUsers();
